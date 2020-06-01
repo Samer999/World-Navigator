@@ -2,17 +2,17 @@ import Controllers.GameDriver;
 import Controllers.GameModeControls.OnePlayerMode;
 
 public class Main {
-    public static void main(String[] args) {
 
-        GameDriver game = GameDriver.getInstance();
+  public static void main(String[] args) {
 
-        OnePlayerMode gameControllerOnePlayer = new OnePlayerMode();
+    GameDriver game = GameDriver.getInstance();
 
-        game.addGameMode(gameControllerOnePlayer);
+    OnePlayerMode gameControllerOnePlayer = new OnePlayerMode();
 
-        game.start();
+    game.addGameMode(gameControllerOnePlayer);
+
+    game.start();
 
 
-
-    }
+  }
 }

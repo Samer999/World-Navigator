@@ -1,17 +1,16 @@
 package Items;
 
-public class FlashLight extends Light{
+public class FlashLight extends Light {
 
-    public FlashLight(int price) {
-        super(price);
-    }
+  public FlashLight(int price) {
+    super(price);
+  }
 
 
-    @Override
-    public String toString() {
-        return "Flash Light{"  + "price=" + getPrice() + "}";
-    }
-
+  @Override
+  public String toString() {
+    return "Flash Light{" + "price=" + getPrice() + "}";
+  }
 
 
 }

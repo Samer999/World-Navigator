@@ -4,62 +4,60 @@ import Items.Item;
 import Map.RoomObjects.RoomObject;
 import PlayerInfo.Player;
 import PlayerInfo.Trader;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BuyCommand extends PlayerCommand {
 
 
+  public BuyCommand(Player player) {
+    super(player);
+  }
 
-    public BuyCommand(Player player) {
-        super(player);
+  @Override
+  public void execute() {
+    RoomObject trader0 = getPlayer().facingRoomObject();
+
+    if (!(trader0 instanceof Trader)) {
+      System.out.println("You are not facing a trader! buying is canceled...");
+      return;
     }
 
-    @Override
-    public void execute() {
-        RoomObject trader0 = getPlayer().facingRoomObject();
+    Trader trader = (Trader) trader0;
 
-        if (!(trader0 instanceof Trader)) {
-            System.out.println("You are not facing a trader! buying is canceled...");
-            return;
+    int index = 0;
+
+    Scanner scanner = new Scanner(System.in);
+
+    Item item = null;
+
+    System.out.println(trader.getItemStatus());
+    System.out.print("Enter index : ");
+
+    try {
+
+      index = new Scanner(System.in).nextInt();
+
+        if (!trader.isValidItemIndex(index)) {
+            throw new InputMismatchException();
         }
 
+      item = trader.getItemByIndex(index);
 
-        Trader trader = (Trader) trader0;
+    } catch (InputMismatchException e) {
 
-        int index = 0;
+      System.out.println("This is not a valid index! buying is canceled...");
 
-        Scanner scanner = new Scanner(System.in);
-
-        Item item = null;
-
-        System.out.println(trader.getItemStatus());
-        System.out.print("Enter index : ");
-
-        try {
-
-            index = new Scanner(System.in).nextInt();
-
-            if (!trader.isValidItemIndex(index))
-                throw new InputMismatchException();
-
-            item = trader.getItemByIndex(index);
-
-        } catch (InputMismatchException e) {
-
-            System.out.println("This is not a valid index! buying is canceled...");
-
-            return;
-
-        }
-
-        getPlayer().buyItem(trader, item);
+      return;
 
     }
 
-    @Override
-    public String name() {
-        return "Buy Item";
-    }
+    getPlayer().buyItem(trader, item);
+
+  }
+
+  @Override
+  public String name() {
+    return "Buy Item";
+  }
 }

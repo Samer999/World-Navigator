@@ -3,66 +3,67 @@ package Map;
 import Directions.Direction;
 import Map.RoomObjects.Room;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-
 public class MapBuilder {
 
-    private Room startRoom;
-    private Room goalRoom;
-    private int timeToFinish;
-    private int initialGold;
-    private Direction playerFacingDirection;
+  private Room startRoom;
+  private Room goalRoom;
+  private int timeToFinish;
+  private int initialGold;
+  private Direction playerFacingDirection;
 
-    public MapBuilder setStartRoom(Room startRoom) {
+  public MapBuilder setStartRoom(Room startRoom) {
 
-        if (startRoom == null)
-            throw new IllegalArgumentException("start room value is null!");
-
-        this.startRoom = startRoom;
-        return this;
+    if (startRoom == null) {
+      throw new IllegalArgumentException("start room value is null!");
     }
 
-    public MapBuilder setGoalRoom(Room goalRoom) {
+    this.startRoom = startRoom;
+    return this;
+  }
 
-        if (goalRoom == null)
-            throw new IllegalArgumentException("goal room value is null!");
+  public MapBuilder setGoalRoom(Room goalRoom) {
 
-        this.goalRoom = goalRoom;
-        return this;
+    if (goalRoom == null) {
+      throw new IllegalArgumentException("goal room value is null!");
     }
 
-    public MapBuilder setTimeToFinish(int timeToFinish) {
+    this.goalRoom = goalRoom;
+    return this;
+  }
 
-        if (timeToFinish < 0)
-            throw new IllegalArgumentException("time to finish value is invalid!");
+  public MapBuilder setTimeToFinish(int timeToFinish) {
 
-        this.timeToFinish = timeToFinish;
-        return this;
+    if (timeToFinish < 0) {
+      throw new IllegalArgumentException("time to finish value is invalid!");
     }
 
-    public MapBuilder setInitialGold(int initialGold) {
+    this.timeToFinish = timeToFinish;
+    return this;
+  }
 
-        if (initialGold < 0)
-            throw new IllegalArgumentException("initial gold value is invalid!");
+  public MapBuilder setInitialGold(int initialGold) {
 
-        this.initialGold = initialGold;
-        return this;
+    if (initialGold < 0) {
+      throw new IllegalArgumentException("initial gold value is invalid!");
     }
 
-    public MapBuilder setPlayerFacingDirection(Direction playerFacingDirection) {
+    this.initialGold = initialGold;
+    return this;
+  }
 
-        if (playerFacingDirection == null)
-            throw new IllegalArgumentException("player facing direction value is null!");
+  public MapBuilder setPlayerFacingDirection(Direction playerFacingDirection) {
 
-        this.playerFacingDirection = playerFacingDirection;
-        return this;
+    if (playerFacingDirection == null) {
+      throw new IllegalArgumentException("player facing direction value is null!");
     }
 
+    this.playerFacingDirection = playerFacingDirection;
+    return this;
+  }
 
-    public Map buildMap(){
-        return new Map(startRoom, goalRoom, timeToFinish, initialGold, playerFacingDirection);
-    }
+
+  public Map buildMap() {
+    return new Map(startRoom, goalRoom, timeToFinish, initialGold, playerFacingDirection);
+  }
 
 }

@@ -2,7 +2,8 @@ package Controllers.Commands;
 
 public interface Command {
 
-    void execute();
-    String name();
+  void execute();
+
+  String name();
 
 }
