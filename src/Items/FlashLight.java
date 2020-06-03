@@ -6,11 +6,8 @@ public class FlashLight extends Light {
     super(price);
   }
 
-
   @Override
   public String toString() {
     return "Flash Light{" + "price=" + getPrice() + "}";
   }
-
-
 }

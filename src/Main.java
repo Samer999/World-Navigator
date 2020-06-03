@@ -12,7 +12,5 @@ public class Main {
     game.addGameMode(gameControllerOnePlayer);
 
     game.start();
-
-
   }
 }

@@ -1,6 +1,5 @@
 package PlayerInfo;
 
-
 import Items.Item;
 import Items.Key;
 import java.io.Serializable;
@@ -10,7 +9,6 @@ public abstract class Trader implements Serializable {
 
   private ItemStatus itemStatus;
   private GoldStatus goldStatus;
-
 
   public Trader(int GoldAmount) {
     itemStatus = new ItemStatus();
@@ -57,7 +55,6 @@ public abstract class Trader implements Serializable {
     return itemStatus.isValidIndex(index);
   }
 
-
   public Item getItemByIndex(int index) {
     return itemStatus.getItemByIndex(index);
   }
@@ -82,8 +79,7 @@ public abstract class Trader implements Serializable {
     return true;
   }
 
-
-  final public void sellItem(Trader trader, Item item) {//Template Method pattern
+  public final void sellItem(Trader trader, Item item) {
 
     if (trader == null) {
       throw new IllegalArgumentException("trader value is null!");
@@ -101,11 +97,10 @@ public abstract class Trader implements Serializable {
 
     proceedSelling(item);
     trader.proceedBuying(item);
-
   }
 
-  final public void buyItem(Trader trader,
-      Item item) {//This Template Method calls the other Template Method
+  public final void buyItem(
+      Trader trader, Item item) { // This Template Method calls the other Template Method
 
     if (trader == null) {
       throw new IllegalArgumentException("trader value is null!");
@@ -126,7 +121,6 @@ public abstract class Trader implements Serializable {
 
   public abstract void proceedSelling(Item item);
 
-
   public StringBuilder getStatus() {
     StringBuilder status = goldStatus.getGoldStatus();
     status.append(itemStatus.getItemsStatus());
@@ -136,6 +130,4 @@ public abstract class Trader implements Serializable {
   public StringBuilder getItemStatus() {
     return itemStatus.getItemsStatus();
   }
-
-
 }

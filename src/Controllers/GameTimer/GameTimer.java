@@ -40,7 +40,6 @@ public class GameTimer extends Thread {
     }
   }
 
-
   public int getRemainingSeconds() {
     return seconds;
   }
@@ -53,7 +52,6 @@ public class GameTimer extends Thread {
     synchronized (this) {
       setSeconds(getRemainingSeconds() + seconds);
     }
-
   }
 
   public void removeSeconds(int seconds) {
@@ -65,5 +63,4 @@ public class GameTimer extends Thread {
       setSeconds(getRemainingSeconds() - seconds);
     }
   }
-
 }

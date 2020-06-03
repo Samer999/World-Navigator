@@ -4,7 +4,6 @@ import PlayerInfo.Player;
 
 public class ForwardCommand extends PlayerCommand {
 
-
   public ForwardCommand(Player player) {
     super(player);
   }

@@ -4,9 +4,7 @@ import Items.Key;
 
 public class Door extends Entryway {
 
-
-  public Door() {
-  }
+  public Door() {}
 
   public Door(Key lockKey) {
     super(lockKey);

@@ -1,6 +1,5 @@
 package Items;
 
-
 public abstract class Light extends Item {
 
   private boolean lightOn;
@@ -28,6 +27,4 @@ public abstract class Light extends Item {
 
     return true;
   }
-
-
 }

@@ -1,6 +1,5 @@
 package Map.RoomObjects;
 
-
 import Directions.Direction;
 import Items.Light;
 import java.io.Serializable;
@@ -8,19 +7,19 @@ import java.util.EnumMap;
 
 public class Room implements Serializable {
 
-  // ex : wallObjects.get(NORTH) gives us the wallObject on the northern wall
-  private EnumMap<Direction, RoomObject> wallObjects;
+  // ex : roomObjects.get(NORTH) gives us the roomObject on the northern wall
+  private EnumMap<Direction, RoomObject> roomObjects;
+  // every room could have a light inside it and it could be from any type of lights
   private Light roomLight;
 
-
   public Room() {
-    wallObjects = new EnumMap(Direction.class);
+    roomObjects = new EnumMap(Direction.class);
 
-    //default values for room objects
-    wallObjects.put(Direction.NORTH, new PlainWall());
-    wallObjects.put(Direction.WEST, new PlainWall());
-    wallObjects.put(Direction.EAST, new PlainWall());
-    wallObjects.put(Direction.SOUTH, new PlainWall());
+    // default values for room objects
+    roomObjects.put(Direction.NORTH, new PlainWall());
+    roomObjects.put(Direction.WEST, new PlainWall());
+    roomObjects.put(Direction.EAST, new PlainWall());
+    roomObjects.put(Direction.SOUTH, new PlainWall());
   }
 
   public Room(Light roomLight) {
@@ -32,7 +31,6 @@ public class Room implements Serializable {
     this.roomLight = roomLight;
   }
 
-
   public void addRoomObject(Direction direction, RoomObject roomObject) {
 
     if (direction == null) {
@@ -43,17 +41,16 @@ public class Room implements Serializable {
       throw new IllegalArgumentException("room object value is null!");
     }
 
-    wallObjects.put(direction, roomObject);
+    roomObjects.put(direction, roomObject);
   }
 
-  public RoomObject getWallObject(Direction direction) {
+  public RoomObject getRoomObject(Direction direction) {
     if (direction == null) {
       throw new IllegalArgumentException("direction value is null!");
     }
 
-    return wallObjects.get(direction);
+    return roomObjects.get(direction);
   }
-
 
   public boolean isLightSwitchAvailable() {
     return roomLight != null;

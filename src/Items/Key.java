@@ -1,6 +1,5 @@
 package Items;
 
-
 import java.util.Objects;
 
 public class Key extends Item {
@@ -31,7 +30,6 @@ public class Key extends Item {
 
     return ((Key) o).name.equals(name);
   }
-
 
   @Override
   public int hashCode() {

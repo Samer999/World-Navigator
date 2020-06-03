@@ -1,14 +1,12 @@
 package Map.RoomObjects;
 
-
 import Items.Item;
 import PlayerInfo.Trader;
-
 
 public class Seller extends Trader implements RoomObject {
 
   public Seller() {
-    super(Integer.MAX_VALUE / 2);
+    super(Integer.MAX_VALUE / 2); // seller is rich so he has a lot of money
   }
 
   public String look() {
@@ -48,6 +46,5 @@ public class Seller extends Trader implements RoomObject {
     StringBuilder itemStatus = new StringBuilder("Seller's ").append(super.getItemStatus());
 
     return itemStatus;
-
   }
 }

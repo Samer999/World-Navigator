@@ -4,6 +4,10 @@ import Directions.Direction;
 import Items.Key;
 import java.util.EnumMap;
 
+/**
+ * Entryway is RoomObject that gets players from room to another, doors, portals, tunnels could be
+ * considered Entryways
+ */
 public abstract class Entryway extends Lockable implements RoomObject, Checkable {
 
   private EnumMap<Direction, Room> nextRoom;

@@ -18,7 +18,7 @@ public enum Direction {
         return Direction.WEST;
       case SOUTH:
         return Direction.NORTH;
-      default://this default must be Direction.WEST
+      default: // this default must be Direction.WEST
         return Direction.EAST;
     }
   }
@@ -35,7 +35,7 @@ public enum Direction {
         return Direction.SOUTH;
       case SOUTH:
         return Direction.WEST;
-      default://default here is always WEST
+      default: // default here is always WEST
         return Direction.NORTH;
     }
   }
@@ -52,7 +52,7 @@ public enum Direction {
         return Direction.SOUTH;
       case SOUTH:
         return Direction.EAST;
-      default://default here is always EAST
+      default: // default here is always EAST
         return Direction.NORTH;
     }
   }

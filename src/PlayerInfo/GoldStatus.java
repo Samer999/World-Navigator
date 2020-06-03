@@ -1,4 +1,3 @@
-//complete
 package PlayerInfo;
 
 import java.io.Serializable;
@@ -42,6 +41,5 @@ public class GoldStatus implements Serializable {
     }
 
     balance += amount;
-
   }
 }

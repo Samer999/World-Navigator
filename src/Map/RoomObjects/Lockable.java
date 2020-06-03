@@ -2,6 +2,10 @@ package Map.RoomObjects;
 
 import Items.Key;
 
+/**
+ * Lockable could be any room object that could be locked, every lockable is closable but not every
+ * closable is a lockable
+ */
 public abstract class Lockable extends Closeable {
 
   private Key lockKey;
@@ -16,8 +20,8 @@ public abstract class Lockable extends Closeable {
   }
 
   public Lockable() {
-    //default constructor
-    isUnlocked = true;//because there is no lock
+    // default constructor
+    isUnlocked = true; // because there is no lock
   }
 
   public boolean isUnlocked() {
@@ -27,7 +31,7 @@ public abstract class Lockable extends Closeable {
   public String getKeyName() {
 
     if (lockKey == null) {
-      return "";//there is no lock key in the first place, so we return empty name string
+      return ""; // there is no lock key in the first place, so we return empty name string
     }
 
     return lockKey.getName();
@@ -43,7 +47,7 @@ public abstract class Lockable extends Closeable {
       return;
     }
 
-    close();//make sure to close the door if it was opened, so the key get tested
+    close(); // make sure to close the door if it was opened, so the key get tested
 
     if (lockKey.equalToUse(key)) {
       if (isUnlocked) {

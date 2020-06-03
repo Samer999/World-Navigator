@@ -4,13 +4,12 @@ import Items.Key;
 import PlayerInfo.Player;
 import java.io.Serializable;
 
+/** OneKeyLoot is a type of loot that is just a Key */
 public class OneKeyLoot implements Loot, Serializable {
 
   private Key key;
 
-  public OneKeyLoot() {
-
-  }
+  public OneKeyLoot() {}
 
   public OneKeyLoot(Key key) {
     if (key == null) {
@@ -35,5 +34,4 @@ public class OneKeyLoot implements Loot, Serializable {
     System.out.println("the " + key.getName() + " key was acquired");
     key = null;
   }
-
 }

@@ -3,13 +3,11 @@ package Map.RoomObjects;
 import Items.Key;
 import PlayerInfo.Player;
 
-public class Chest extends Lockable implements RoomObject, Checkable, LootHidder {
+public class Chest extends Lockable implements RoomObject, Checkable, LootHider {
 
   private FullLoot loot;
 
-  public Chest() {
-
-  }
+  public Chest() {}
 
   public Chest(Key lockKey) {
     super(lockKey);

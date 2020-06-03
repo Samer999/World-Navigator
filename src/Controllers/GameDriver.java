@@ -8,18 +8,20 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * GameDriver is the main entity in this game It controls the different maps and game modes that it
+ * has to offer
+ */
 public class GameDriver {
 
   private static GameDriver gameDriver = new GameDriver();
   private ArrayList<MapLoader> maps;
   private ArrayList<Mode> modes;
 
-
   private GameDriver() {
     maps = new ArrayList<MapLoader>();
     modes = new ArrayList<>();
   }
-
 
   public static GameDriver getInstance() {
     return gameDriver;
@@ -32,36 +34,36 @@ public class GameDriver {
     int whatToDoNext = 0;
 
     while (true) {
-      System.out.print("What do you want next?\n" +
-          "0 : Start new game\n" +
-          "1 : Exit World Navigator\n" +
-          "Enter index : ");
+      System.out.print(
+          "What do you want next?\n"
+              + "0 : Start new game\n"
+              + "1 : Exit World Navigator\n"
+              + "Enter index : ");
 
       try {
         whatToDoNext = Integer.parseInt(scanner.next());
-          if (whatToDoNext < 0 || whatToDoNext > 1) {
-              throw new InputMismatchException();
-          }
+        if (whatToDoNext < 0 || whatToDoNext > 1) {
+          throw new InputMismatchException();
+        }
 
       } catch (InputMismatchException | NumberFormatException e) {
         System.out.println("invalid input!");
         continue;
       }
 
-        if (whatToDoNext == 0) {
-            startNewGame();
-        } else {
-            System.out.println("Exiting World Navigator...");
-            return;
-        }
-
+      if (whatToDoNext == 0) {
+        startNewGame();
+      } else {
+        System.out.println("Exiting World Navigator...");
+        return;
+      }
     }
   }
 
   public void addGameMode(Mode mode) {
-      if (mode == null) {
-          throw new IllegalArgumentException("game controller value is null!");
-      }
+    if (mode == null) {
+      throw new IllegalArgumentException("game controller value is null!");
+    }
 
     modes.add(mode);
   }
@@ -88,19 +90,17 @@ public class GameDriver {
     mode = pickMode();
     mode.setMap(map);
     mode.start();
-
   }
 
   private void findMaps() {
     File file = new File("resources/maps");
     for (File fileEntry : file.listFiles()) {
-        if (fileEntry.isDirectory()) {
-            continue;
-        }
+      if (fileEntry.isDirectory()) {
+        continue;
+      }
       maps.add(new MapLoader(fileEntry));
     }
   }
-
 
   private void showPossibleMaps() {
 
@@ -110,9 +110,9 @@ public class GameDriver {
   }
 
   private Map getMap(int index) {
-      if (index < 0 || index >= maps.size()) {
-          throw new IndexOutOfBoundsException("This is not a valid index!");
-      }
+    if (index < 0 || index >= maps.size()) {
+      throw new IndexOutOfBoundsException("This is not a valid index!");
+    }
 
     return maps.get(index).getMap();
   }
@@ -145,9 +145,9 @@ public class GameDriver {
   }
 
   private Mode getMode(int index) {
-      if (index < 0 || index > modes.size()) {
-          throw new IndexOutOfBoundsException("index value is invalid!");
-      }
+    if (index < 0 || index > modes.size()) {
+      throw new IndexOutOfBoundsException("index value is invalid!");
+    }
 
     return modes.get(index);
   }
@@ -172,5 +172,4 @@ public class GameDriver {
       return mode;
     }
   }
-
 }

@@ -20,7 +20,5 @@ public abstract class Item implements Serializable {
 
   public abstract boolean equalToUse(Object o);
 
-  abstract public String toString();
-
-
+  public abstract String toString();
 }

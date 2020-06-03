@@ -21,8 +21,7 @@ public abstract class Mode {
   protected Map map;
   private ArrayList<Command> commands;
   private boolean isFinished;
-  private String serializedMap;//we serialize the map here, so we have a copy of the original map
-
+  private String serializedMap; // store original map
 
   public Mode() {
     commands = new ArrayList();
@@ -39,6 +38,10 @@ public abstract class Mode {
     initialValuesToRestart();
   }
 
+  /**
+   * save/serialize the map object into (serializedMap : String) so we can get the original map back
+   * after a restart
+   */
   private void saveOriginalMap() {
     ByteArrayOutputStream bos = new ByteArrayOutputStream();
     ObjectOutput out = null;
@@ -52,6 +55,7 @@ public abstract class Mode {
     serializedMap = Base64.getEncoder().encodeToString(byteArray);
   }
 
+  /** restart the map to it's original state */
   public void restartMap() {
     final byte[] bytes = Base64.getDecoder().decode(serializedMap);
 
@@ -65,7 +69,6 @@ public abstract class Mode {
     } catch (ClassNotFoundException e) {
       e.printStackTrace();
     }
-
   }
 
   public boolean isFinished() {
@@ -116,7 +119,6 @@ public abstract class Mode {
     }
 
     command.execute();
-
   }
 
   public final void restart() {

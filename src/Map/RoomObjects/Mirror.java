@@ -4,7 +4,7 @@ import Items.Key;
 import PlayerInfo.Player;
 import java.io.Serializable;
 
-public class Mirror implements LootHidder, Checkable, RoomObject, Serializable {
+public class Mirror implements LootHider, Checkable, RoomObject, Serializable {
 
   private OneKeyLoot key;
 

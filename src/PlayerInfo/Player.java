@@ -1,6 +1,5 @@
 package PlayerInfo;
 
-
 import Directions.Direction;
 import Items.Item;
 import Items.Key;
@@ -9,7 +8,7 @@ import Map.RoomObjects.Checkable;
 import Map.RoomObjects.Closeable;
 import Map.RoomObjects.Entryway;
 import Map.RoomObjects.Lockable;
-import Map.RoomObjects.LootHidder;
+import Map.RoomObjects.LootHider;
 import Map.RoomObjects.Room;
 import Map.RoomObjects.RoomObject;
 
@@ -21,9 +20,8 @@ public class Player extends Trader {
 
   public Player() {
     super(0);
-    facingDirection = Direction.NORTH;//default facing direction, it could be changed
+    facingDirection = Direction.NORTH; // default facing direction, it could be changed
   }
-
 
   public void setDirection(Direction direction) {
     if (direction == null) {
@@ -42,7 +40,7 @@ public class Player extends Trader {
   }
 
   public RoomObject facingRoomObject() {
-    return currentRoom.getWallObject(facingDirection);
+    return currentRoom.getRoomObject(facingDirection);
   }
 
   public Direction getFacingDirection() {
@@ -76,7 +74,7 @@ public class Player extends Trader {
   public void forward() {
 
     if (!(facingRoomObject() instanceof Entryway)) {
-      System.out.println("This is no entry way!");
+      System.out.println("This is not a entry way!");
     } else if (!((Entryway) facingRoomObject()).isUnlocked()) {
       System.out.println("This entry way is locked!");
     } else if (!((Entryway) facingRoomObject()).isOpen()) {
@@ -86,13 +84,12 @@ public class Player extends Trader {
     }
   }
 
-
   public void backward() {
 
-    RoomObject roomObject = currentRoom.getWallObject(Direction.oppositeDirection(facingDirection));
+    RoomObject roomObject = currentRoom.getRoomObject(Direction.oppositeDirection(facingDirection));
 
     if (!(roomObject instanceof Entryway)) {
-      System.out.println("This is no entry way!");
+      System.out.println("This is not a entry way!");
     } else if (!((Entryway) roomObject).isUnlocked()) {
       System.out.println("This entry way is locked!");
     } else if (!((Entryway) roomObject).isOpen()) {
@@ -100,11 +97,9 @@ public class Player extends Trader {
     } else {
       currentRoom = ((Entryway) roomObject).getRoom(Direction.oppositeDirection(facingDirection));
     }
-
   }
 
-
-  public void look() {//good
+  public void look() {
     if (!currentRoom.isLightSwitchOn() && (heldLight == null || !heldLight.isLightOn())) {
       System.out.println("Dark! Nothing to see");
       return;
@@ -113,8 +108,7 @@ public class Player extends Trader {
     System.out.println(facingRoomObject().look());
   }
 
-
-  public void check() {//good
+  public void check() {
 
     if (!(facingRoomObject() instanceof Checkable)) {
       System.out.println("Nothing to check here!");
@@ -129,12 +123,10 @@ public class Player extends Trader {
 
     System.out.println(checkable.check());
 
-    if (checkable instanceof LootHidder) {
-      ((LootHidder) checkable).loot(this);
+    if (checkable instanceof LootHider) {
+      ((LootHider) checkable).loot(this);
     }
-
   }
-
 
   public void holdLight(Light light) {
 
@@ -143,7 +135,7 @@ public class Player extends Trader {
     }
 
     if (heldLight
-        != null)//if the player is holding a light, put it in inventory so he holds the other one
+        != null) // if the player is holding a light, put it in inventory so he holds the other one
     {
       giveItem(heldLight);
     }
@@ -170,7 +162,7 @@ public class Player extends Trader {
     }
   }
 
-  public void open() {//test this
+  public void open() {
     if (!(facingRoomObject() instanceof Closeable)) {
       System.out.println("Cant open this!");
     } else {
@@ -186,14 +178,12 @@ public class Player extends Trader {
     }
   }
 
-
   public String itemsOfFacedTrader() {
     if (!(facingRoomObject() instanceof Trader)) {
       return "You are not facing a trader!";
     } else {
       return ((Trader) facingRoomObject()).getItemStatus().toString();
     }
-
   }
 
   public void useKey(Key key) {
@@ -216,7 +206,6 @@ public class Player extends Trader {
 
     lockable.useKey(key);
   }
-
 
   @Override
   public void proceedBuying(Item item) {
@@ -242,18 +231,18 @@ public class Player extends Trader {
     giveGold(item.getPrice());
   }
 
-
   @Override
   public StringBuilder getStatus() {
-    return new StringBuilder("player status :\n" +
-        "player facing direction : " + facingDirection + "\n" +
-        super.getStatus());
+    return new StringBuilder(
+        "player status :\n"
+            + "player facing direction : "
+            + facingDirection
+            + "\n"
+            + super.getStatus());
   }
 
   @Override
   public StringBuilder getItemStatus() {
     return new StringBuilder("Player items :\n" + super.getItemStatus());
   }
-
-
 }

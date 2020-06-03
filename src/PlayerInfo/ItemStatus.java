@@ -1,11 +1,4 @@
-/*
- * notes:
- * get item by index
- * boolean is validIndex(int index)?
- * */
-
 package PlayerInfo;
-
 
 import Items.Item;
 import Items.Key;
@@ -71,7 +64,6 @@ public class ItemStatus implements Serializable {
     return itemList.get(index);
   }
 
-
   public boolean contains(Item item) {
     if (item == null) {
       throw new IllegalArgumentException("item value is null!");
@@ -79,7 +71,6 @@ public class ItemStatus implements Serializable {
 
     return itemList.contains(item);
   }
-
 
   public StringBuilder getItemsStatus() {
 
@@ -91,5 +82,4 @@ public class ItemStatus implements Serializable {
 
     return status;
   }
-
 }

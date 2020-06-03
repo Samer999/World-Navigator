@@ -27,8 +27,6 @@ public class OnePlayerMode extends Mode {
     player = new Player();
     player.setCurrentRoom(map.getStartRoom());
     player.setDirection(map.getPlayerFacingDirection());
-    player.takeAwayGold(player
-        .getGoldBalance());//clear player balance in case we call this function to restart the game
     player.giveGold(map.getInitialGold());
 
     if (gameTimer != null) {
@@ -84,7 +82,6 @@ public class OnePlayerMode extends Mode {
 
       showCommands();
       pickCommand();
-
     }
     gameTimer.stop();
   }

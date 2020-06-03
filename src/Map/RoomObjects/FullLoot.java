@@ -5,6 +5,9 @@ import PlayerInfo.ItemStatus;
 import PlayerInfo.Player;
 import java.io.Serializable;
 
+/**
+ * FullLoot is a type of loot that could contains evey type of items and different amount of gold
+ */
 public class FullLoot implements Loot, Serializable {
 
   private int goldLoot;
@@ -74,12 +77,10 @@ public class FullLoot implements Loot, Serializable {
 
       lastIndexInList--;
     }
-
   }
 
   public void loot(Player player) {
     lootGold(player);
     lootItems(player);
   }
-
 }

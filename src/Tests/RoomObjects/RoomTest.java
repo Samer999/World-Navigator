@@ -27,10 +27,10 @@ class RoomTest {
 
   @Test
   void addAndGetWallObject() {
-    assertTrue(room.getWallObject(Direction.NORTH) instanceof PlainWall);
+    assertTrue(room.getRoomObject(Direction.NORTH) instanceof PlainWall);
     Mirror mirror = new Mirror();
     room.addRoomObject(Direction.NORTH, mirror);
-    assertTrue(room.getWallObject(Direction.NORTH) == mirror);
+    assertTrue(room.getRoomObject(Direction.NORTH) == mirror);
   }
 
   @Test
