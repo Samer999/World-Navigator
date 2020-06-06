@@ -6,19 +6,19 @@ import java.io.Serializable;
 
 public class Painting implements LootHider, Checkable, RoomObject, Serializable {
 
-  private OneKeyLoot key;
+  private OneKeyLoot keyLoot;
 
   public Painting() {
-    key = new OneKeyLoot();
+    keyLoot = new OneKeyLoot();
   }
 
-  public Painting(Key key) {
+  public Painting(Key keyLoot) {
 
-    if (key == null) {
+    if (keyLoot == null) {
       throw new IllegalArgumentException("key value is null!");
     }
 
-    this.key = new OneKeyLoot(key);
+    this.keyLoot = new OneKeyLoot(keyLoot);
   }
 
   @Override
@@ -28,12 +28,12 @@ public class Painting implements LootHider, Checkable, RoomObject, Serializable 
 
   @Override
   public Loot getLoot() {
-    return key;
+    return keyLoot;
   }
 
   @Override
   public void loot(Player player) {
-    key.loot(player);
+    keyLoot.loot(player);
   }
 
   @Override

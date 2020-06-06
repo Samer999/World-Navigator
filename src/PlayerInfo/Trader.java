@@ -1,7 +1,6 @@
 package PlayerInfo;
 
 import Items.Item;
-import Items.Key;
 import java.io.Serializable;
 import java.util.NoSuchElementException;
 
@@ -13,22 +12,6 @@ public abstract class Trader implements Serializable {
   public Trader(int GoldAmount) {
     itemStatus = new ItemStatus();
     goldStatus = new GoldStatus(GoldAmount);
-  }
-
-  public boolean haveKeyNamed(String keyName) {
-    if (keyName == null) {
-      throw new IllegalArgumentException("key name string is null!");
-    }
-
-    return itemStatus.getKeyNamed(keyName) != null;
-  }
-
-  public Key getKeyNamed(String keyName) {
-    if (keyName == null) {
-      throw new IllegalArgumentException("key name string is null!");
-    }
-
-    return itemStatus.getKeyNamed(keyName);
   }
 
   public void giveItem(Item item) {

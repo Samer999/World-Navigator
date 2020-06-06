@@ -18,14 +18,14 @@ public class SellCommand extends PlayerCommand {
   @Override
   public void execute() {
 
-    RoomObject trader0 = getPlayer().facingRoomObject();
+    RoomObject roomObject = getPlayer().facingRoomObject();
 
-    if (!(trader0 instanceof Trader)) {
+    if (!(roomObject instanceof Trader)) {
       System.out.println("You are not facing a trader or a seller! selling is canceled...");
       return;
     }
 
-    Trader trader = (Trader) trader0;
+    Trader trader = (Trader) roomObject;
 
     int index = 0;
 
