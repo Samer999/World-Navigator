@@ -80,4 +80,12 @@ public class ItemStatus implements Serializable {
 
     return true;
   }
+
+  @Override
+  public int hashCode() {
+    int hash = 31;
+    for (Item item : itemList) hash = ((hash + item.hashCode()) * 31) % Integer.MAX_VALUE;
+
+    return hash;
+  }
 }
