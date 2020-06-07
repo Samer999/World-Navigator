@@ -4,7 +4,6 @@ import PlayerInfo.Player;
 
 public class LookCommand extends PlayerCommand {
 
-
   public LookCommand(Player player) {
     super(player);
   }

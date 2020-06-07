@@ -4,7 +4,6 @@ import Controllers.GameModeControls.Mode;
 
 public class QuitMapCommand extends GameModeCommand {
 
-
   public QuitMapCommand(Mode mode) {
     super(mode);
   }

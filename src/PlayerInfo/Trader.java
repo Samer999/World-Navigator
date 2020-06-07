@@ -124,8 +124,7 @@ public abstract class Trader implements Serializable {
       return false;
     }
     Trader trader = (Trader) o;
-    return itemStatus.equals(trader.itemStatus) &&
-        goldStatus.equals(trader.goldStatus);
+    return itemStatus.equals(trader.itemStatus) && goldStatus.equals(trader.goldStatus);
   }
 
   @Override

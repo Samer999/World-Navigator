@@ -3,7 +3,6 @@ package PlayerInfo;
 import Items.Item;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class ItemStatus implements Serializable {
 
@@ -77,11 +76,8 @@ public class ItemStatus implements Serializable {
     }
     ItemStatus that = (ItemStatus) o;
 
-    for (Item item : that.itemList)
-      if (!itemList.contains(item))
-        return false;
+    for (Item item : that.itemList) if (!itemList.contains(item)) return false;
 
     return true;
   }
-
 }

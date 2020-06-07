@@ -22,7 +22,6 @@ class RoomTest {
 
     lightSwitch = new FlashLight(0);
     room = new Room(lightSwitch);
-
   }
 
   @Test

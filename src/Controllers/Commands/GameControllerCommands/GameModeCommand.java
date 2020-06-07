@@ -7,7 +7,6 @@ public abstract class GameModeCommand implements Command {
 
   Mode mode;
 
-
   public GameModeCommand(Mode mode) {
 
     if (mode == null) {
@@ -20,7 +19,5 @@ public abstract class GameModeCommand implements Command {
   public Mode getMode() {
 
     return mode;
-
   }
-
 }

@@ -9,11 +9,9 @@ import java.util.Scanner;
 
 public class SellCommand extends PlayerCommand {
 
-
   public SellCommand(Player player) {
     super(player);
   }
-
 
   @Override
   public void execute() {
@@ -53,7 +51,6 @@ public class SellCommand extends PlayerCommand {
     }
 
     trader.buyItem(getPlayer(), item);
-
   }
 
   @Override

@@ -94,8 +94,7 @@ public class FullLoot implements Loot, Serializable {
       return false;
     }
     FullLoot fullLoot = (FullLoot) o;
-    return goldLoot == fullLoot.goldLoot &&
-        lootStatus.equals(fullLoot.lootStatus);
+    return goldLoot == fullLoot.goldLoot && lootStatus.equals(fullLoot.lootStatus);
   }
 
   @Override

@@ -61,9 +61,7 @@ public class MapBuilder {
     return this;
   }
 
-
   public Map buildMap() {
     return new Map(startRoom, goalRoom, timeToFinish, initialGold, playerFacingDirection);
   }
-
 }

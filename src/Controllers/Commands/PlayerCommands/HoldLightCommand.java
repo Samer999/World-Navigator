@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 public class HoldLightCommand extends PlayerCommand {
 
-
   public HoldLightCommand(Player player) {
     super(player);
   }
@@ -53,7 +52,6 @@ public class HoldLightCommand extends PlayerCommand {
 
     getPlayer().takeAwayItem(light);
     getPlayer().holdLight((Light) light);
-
   }
 
   @Override

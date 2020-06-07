@@ -4,11 +4,9 @@ import PlayerInfo.Player;
 
 public class SwitchRoomLightCommand extends PlayerCommand {
 
-
   public SwitchRoomLightCommand(Player player) {
     super(player);
   }
-
 
   @Override
   public void execute() {

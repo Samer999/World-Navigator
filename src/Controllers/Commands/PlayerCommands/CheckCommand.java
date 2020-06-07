@@ -4,7 +4,6 @@ import PlayerInfo.Player;
 
 public class CheckCommand extends PlayerCommand {
 
-
   public CheckCommand(Player player) {
     super(player);
   }

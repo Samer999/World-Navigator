@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 public class UseKeyCommand extends PlayerCommand {
 
-
   public UseKeyCommand(Player player) {
     super(player);
   }
@@ -39,14 +38,12 @@ public class UseKeyCommand extends PlayerCommand {
         throw new InputMismatchException();
       }
 
-
     } catch (InputMismatchException e) {
       System.out.println("This is not a valid key index!");
       return;
     }
 
     getPlayer().useKey((Key) item);
-
   }
 
   @Override

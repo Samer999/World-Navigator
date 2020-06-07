@@ -12,7 +12,6 @@ class DoorTest {
 
   Door door;
 
-
   @BeforeEach
   void setUp() {
     door = new Door();
@@ -29,6 +28,4 @@ class DoorTest {
     assertEquals(door.getRoom(Direction.NORTH), room1);
     assertEquals(door.getRoom(Direction.SOUTH), room2);
   }
-
-
 }

@@ -82,8 +82,7 @@ public class Room implements Serializable {
       return false;
     }
     Room room = (Room) o;
-    return roomObjects.equals(room.roomObjects) &&
-        roomLight.equals(room.roomLight);
+    return roomObjects.equals(room.roomObjects) && roomLight.equals(room.roomLight);
   }
 
   @Override

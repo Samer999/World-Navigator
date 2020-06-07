@@ -15,12 +15,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
-
-/**
- * This is just a tool to create maps
- */
+/** This is just a tool to create maps */
 public class MapCreator {
-
 
   public static void main(String[] args) {
     Mirror mirror1 = new Mirror(new Key(5, "Susuu"));
@@ -84,9 +80,6 @@ public class MapCreator {
     } catch (IOException e) {
       e.printStackTrace();
     }
-
-
-
   }
 }
 

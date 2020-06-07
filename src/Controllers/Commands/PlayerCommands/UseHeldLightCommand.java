@@ -4,7 +4,6 @@ import PlayerInfo.Player;
 
 public class UseHeldLightCommand extends PlayerCommand {
 
-
   public UseHeldLightCommand(Player player) {
     super(player);
   }

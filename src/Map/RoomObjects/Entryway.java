@@ -58,5 +58,4 @@ public abstract class Entryway extends Lockable implements RoomObject, Checkable
   public int hashCode() {
     return Objects.hash(nextRoom);
   }
-
 }

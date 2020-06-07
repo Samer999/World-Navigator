@@ -4,7 +4,6 @@ import PlayerInfo.Player;
 
 public class PlayerStatusCommand extends PlayerCommand {
 
-
   public PlayerStatusCommand(Player player) {
     super(player);
   }

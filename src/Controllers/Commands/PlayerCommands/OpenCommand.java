@@ -4,7 +4,6 @@ import PlayerInfo.Player;
 
 public class OpenCommand extends PlayerCommand {
 
-
   public OpenCommand(Player player) {
     super(player);
   }

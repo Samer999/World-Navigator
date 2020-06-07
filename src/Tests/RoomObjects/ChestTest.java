@@ -20,25 +20,24 @@ class ChestTest {
     player = new Player();
     player.giveGold(100);
 
-    ///////////Player items//////////
+    /////////// Player items//////////
     player.giveItem(new Key(20, "Samer"));
     player.giveItem(new FlashLight(5));
     ////////////////////////////////
 
-    /////////Create full loot///////
+    ///////// Create full loot///////
     FullLoot loot = new FullLoot();
     loot.addItem(new Key(200, "Amer"));
     loot.addItem(new FlashLight(400));
     loot.addGold(200);
     ///////////////////////////////
 
-    ////////Add loot to chest///////
+    //////// Add loot to chest///////
     chest = new Chest();
     chest.setLoot(loot);
     ///////////////////////////////
 
   }
-
 
   @Test
   void loot() {
@@ -55,6 +54,5 @@ class ChestTest {
     assertEquals(player.getStatus().toString(), player2.getStatus().toString());
 
     System.out.println();
-
   }
 }

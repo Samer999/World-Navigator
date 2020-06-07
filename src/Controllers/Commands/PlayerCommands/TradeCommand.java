@@ -11,7 +11,6 @@ public class TradeCommand extends PlayerCommand {
   private SellCommand sellCommand;
   private ItemsOfFacedTraderCommand itemsOfFacedTraderCommand;
 
-
   public TradeCommand(Player player) {
     super(player);
 
@@ -35,12 +34,13 @@ public class TradeCommand extends PlayerCommand {
 
       Scanner scanner = new Scanner(System.in);
 
-      System.out.print("What do you want to do next?\n" +
-          "0 : Buy\n" +
-          "1 : Sell\n" +
-          "2 : List the items of the trader you are facing\n" +
-          "3 : Stop trading\n" +
-          "Enter index : ");
+      System.out.print(
+          "What do you want to do next?\n"
+              + "0 : Buy\n"
+              + "1 : Sell\n"
+              + "2 : List the items of the trader you are facing\n"
+              + "3 : Stop trading\n"
+              + "Enter index : ");
 
       try {
         index = scanner.nextInt();
@@ -67,7 +67,6 @@ public class TradeCommand extends PlayerCommand {
         itemsOfFacedTraderCommand.execute();
       }
     }
-
   }
 
   @Override

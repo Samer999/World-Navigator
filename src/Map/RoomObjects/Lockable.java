@@ -87,8 +87,7 @@ public abstract class Lockable extends Closeable {
       return false;
     }
     Lockable lockable = (Lockable) o;
-    return isUnlocked == lockable.isUnlocked &&
-        lockKey.equals(lockable.lockKey);
+    return isUnlocked == lockable.isUnlocked && lockKey.equals(lockable.lockKey);
   }
 
   @Override

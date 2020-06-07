@@ -4,7 +4,6 @@ import Controllers.GameModeControls.Mode;
 
 public class RestartMapCommand extends GameModeCommand {
 
-
   public RestartMapCommand(Mode mode) {
     super(mode);
   }

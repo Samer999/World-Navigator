@@ -26,7 +26,7 @@ public class MapLoader {
     return file.getName();
   }
 
-  private void load() {//proxy pattern
+  private void load() { // proxy pattern
 
     if (map != null) {
       return;
@@ -42,8 +42,5 @@ public class MapLoader {
     } catch (ClassNotFoundException e) {
       e.printStackTrace();
     }
-
   }
-
-
 }

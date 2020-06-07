@@ -4,7 +4,6 @@ import PlayerInfo.Player;
 
 public class ItemsOfFacedTraderCommand extends PlayerCommand {
 
-
   public ItemsOfFacedTraderCommand(Player player) {
     super(player);
   }

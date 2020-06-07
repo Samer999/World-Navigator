@@ -12,7 +12,11 @@ public class Map implements Serializable {
   private int initialGold;
   private Direction playerFacingDirection;
 
-  public Map(Room startRoom, Room goalRoom, int timeToFinish, int initialGold,
+  public Map(
+      Room startRoom,
+      Room goalRoom,
+      int timeToFinish,
+      int initialGold,
       Direction playerFacingDirection) {
 
     if (startRoom == null) {
@@ -61,6 +65,4 @@ public class Map implements Serializable {
   public Direction getPlayerFacingDirection() {
     return playerFacingDirection;
   }
-
-
 }

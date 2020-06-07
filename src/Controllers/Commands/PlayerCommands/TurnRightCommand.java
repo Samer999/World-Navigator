@@ -4,7 +4,6 @@ import PlayerInfo.Player;
 
 public class TurnRightCommand extends PlayerCommand {
 
-
   public TurnRightCommand(Player player) {
     super(player);
   }

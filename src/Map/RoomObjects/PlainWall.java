@@ -7,5 +7,4 @@ public class PlainWall implements RoomObject, Serializable {
   public String look() {
     return "Wall";
   }
-
 }

@@ -9,7 +9,6 @@ import java.util.Scanner;
 
 public class BuyCommand extends PlayerCommand {
 
-
   public BuyCommand(Player player) {
     super(player);
   }
@@ -38,9 +37,9 @@ public class BuyCommand extends PlayerCommand {
 
       index = new Scanner(System.in).nextInt();
 
-        if (!trader.isValidItemIndex(index)) {
-            throw new InputMismatchException();
-        }
+      if (!trader.isValidItemIndex(index)) {
+        throw new InputMismatchException();
+      }
 
       item = trader.getItemByIndex(index);
 
@@ -49,11 +48,9 @@ public class BuyCommand extends PlayerCommand {
       System.out.println("This is not a valid index! buying is canceled...");
 
       return;
-
     }
 
     getPlayer().buyItem(trader, item);
-
   }
 
   @Override
