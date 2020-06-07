@@ -3,6 +3,7 @@ package Map.RoomObjects;
 import Items.Key;
 import PlayerInfo.Player;
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Mirror implements LootHider, Checkable, RoomObject, Serializable {
 
@@ -39,5 +40,22 @@ public class Mirror implements LootHider, Checkable, RoomObject, Serializable {
   @Override
   public String look() {
     return "You See a silhouette of you";
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Mirror mirror = (Mirror) o;
+    return keyLoot.equals(mirror.keyLoot);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(keyLoot);
   }
 }

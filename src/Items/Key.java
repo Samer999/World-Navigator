@@ -32,12 +32,27 @@ public class Key extends Item {
   }
 
   @Override
-  public int hashCode() {
-    return Objects.hash(name);
+  public String toString() {
+    return "Key{" + "name=" + name + "\tprice=" + getPrice() + "}";
   }
 
   @Override
-  public String toString() {
-    return "Key{" + "name=" + name + "\tprice=" + getPrice() + "}";
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    if (!super.equals(o)) {
+      return false;
+    }
+    Key key = (Key) o;
+    return name.equals(key.name);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(super.hashCode(), name);
   }
 }

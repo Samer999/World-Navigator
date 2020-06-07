@@ -3,6 +3,7 @@ package Map.RoomObjects;
 import Directions.Direction;
 import Items.Key;
 import java.util.EnumMap;
+import java.util.Objects;
 
 /**
  * Entryway is RoomObject that gets players from room to another, doors, portals, tunnels could be
@@ -40,4 +41,22 @@ public abstract class Entryway extends Lockable implements RoomObject, Checkable
 
     return nextRoom.get(direction);
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Entryway entryway = (Entryway) o;
+    return nextRoom.equals(entryway.nextRoom);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(nextRoom);
+  }
+
 }

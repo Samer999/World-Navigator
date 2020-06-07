@@ -1,6 +1,7 @@
 package PlayerInfo;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class GoldStatus implements Serializable {
 
@@ -42,4 +43,17 @@ public class GoldStatus implements Serializable {
 
     balance += amount;
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    GoldStatus that = (GoldStatus) o;
+    return balance == that.balance;
+  }
+
 }

@@ -3,6 +3,7 @@ package PlayerInfo;
 import Items.Item;
 import java.io.Serializable;
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 public abstract class Trader implements Serializable {
 
@@ -112,5 +113,23 @@ public abstract class Trader implements Serializable {
 
   public StringBuilder getItemStatus() {
     return itemStatus.getItemsStatus();
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Trader trader = (Trader) o;
+    return itemStatus.equals(trader.itemStatus) &&
+        goldStatus.equals(trader.goldStatus);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(itemStatus, goldStatus);
   }
 }

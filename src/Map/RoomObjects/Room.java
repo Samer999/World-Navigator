@@ -4,6 +4,7 @@ import Directions.Direction;
 import Items.Light;
 import java.io.Serializable;
 import java.util.EnumMap;
+import java.util.Objects;
 
 public class Room implements Serializable {
 
@@ -70,5 +71,23 @@ public class Room implements Serializable {
     }
 
     roomLight.toggle();
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Room room = (Room) o;
+    return roomObjects.equals(room.roomObjects) &&
+        roomLight.equals(room.roomLight);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(roomObjects, roomLight);
   }
 }

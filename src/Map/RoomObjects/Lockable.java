@@ -1,6 +1,7 @@
 package Map.RoomObjects;
 
 import Items.Key;
+import java.util.Objects;
 
 /**
  * Lockable could be any room object that could be locked, every lockable is closable but not every
@@ -75,5 +76,23 @@ public abstract class Lockable extends Closeable {
 
   private void lock() {
     isUnlocked = false;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Lockable lockable = (Lockable) o;
+    return isUnlocked == lockable.isUnlocked &&
+        lockKey.equals(lockable.lockKey);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(lockKey);
   }
 }

@@ -1,9 +1,9 @@
 package PlayerInfo;
 
 import Items.Item;
-import Items.Key;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ItemStatus implements Serializable {
 
@@ -41,22 +41,6 @@ public class ItemStatus implements Serializable {
     return itemList.size();
   }
 
-  public Key getKeyNamed(String keyName) {
-    if (keyName == null) {
-      throw new IllegalArgumentException("key name string is null!");
-    }
-
-    for (Item item : itemList) {
-      if (item instanceof Key) {
-        if (((Key) item).getName() == keyName) {
-          return (Key) item;
-        }
-      }
-    }
-
-    return null;
-  }
-
   public Item getItemByIndex(int index) {
     if (isValidIndex(index) == false) {
       throw new IndexOutOfBoundsException("This is not a valid index!");
@@ -82,4 +66,22 @@ public class ItemStatus implements Serializable {
 
     return status;
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    ItemStatus that = (ItemStatus) o;
+
+    for (Item item : that.itemList)
+      if (!itemList.contains(item))
+        return false;
+
+    return true;
+  }
+
 }

@@ -3,6 +3,7 @@ package Map.RoomObjects;
 import Items.Key;
 import PlayerInfo.Player;
 import java.io.Serializable;
+import java.util.Objects;
 
 /** OneKeyLoot is a type of loot that is just a Key */
 public class OneKeyLoot implements Loot, Serializable {
@@ -33,5 +34,22 @@ public class OneKeyLoot implements Loot, Serializable {
     player.giveItem(key);
     System.out.println("the " + key.getName() + " key was acquired");
     key = null;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    OneKeyLoot that = (OneKeyLoot) o;
+    return key.equals(that.key);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(key);
   }
 }

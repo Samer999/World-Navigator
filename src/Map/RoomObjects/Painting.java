@@ -3,6 +3,7 @@ package Map.RoomObjects;
 import Items.Key;
 import PlayerInfo.Player;
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Painting implements LootHider, Checkable, RoomObject, Serializable {
 
@@ -39,5 +40,22 @@ public class Painting implements LootHider, Checkable, RoomObject, Serializable 
   @Override
   public String look() {
     return "Painting";
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Painting painting = (Painting) o;
+    return keyLoot.equals(painting.keyLoot);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(keyLoot);
   }
 }
