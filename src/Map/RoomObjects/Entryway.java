@@ -24,11 +24,11 @@ public abstract class Entryway extends Lockable implements RoomObject, Checkable
 
   public void setRoom(Direction direction, Room room) {
     if (direction == null) {
-      throw new IllegalArgumentException("direction value is null!");
+      throw new NullPointerException("direction value is null!");
     }
 
     if (room == null) {
-      throw new IllegalArgumentException("room value is null!");
+      throw new NullPointerException("room value is null!");
     }
 
     nextRoom.put(direction, room);

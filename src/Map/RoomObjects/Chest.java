@@ -20,9 +20,8 @@ public class Chest extends Lockable implements RoomObject, Checkable, LootHider 
   }
 
   public void setLoot(FullLoot loot) {
-    if (loot == null) {
-      throw new IllegalArgumentException("this loot value is null!");
-    }
+    if (loot == null) throw new NullPointerException("this loot value is null!");
+
     this.loot = loot;
   }
 
@@ -44,6 +43,7 @@ public class Chest extends Lockable implements RoomObject, Checkable, LootHider 
 
   @Override
   public void loot(Player player) {
+    if (player == null) throw new NullPointerException("player value is null!");
     if (isUnlocked()) {
       loot.loot(player);
     }

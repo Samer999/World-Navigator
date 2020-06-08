@@ -14,7 +14,7 @@ public abstract class Lockable extends Closeable {
 
   public Lockable(Key lockKey) {
     if (lockKey == null) {
-      throw new IllegalArgumentException("key value is null!");
+      throw new NullPointerException("key value is null!");
     }
 
     this.lockKey = lockKey;
@@ -40,7 +40,7 @@ public abstract class Lockable extends Closeable {
 
   public void useKey(Key key) {
     if (key == null) {
-      throw new IllegalArgumentException("key value is null!");
+      throw new NullPointerException("key value is null!");
     }
 
     if (lockKey == null) {

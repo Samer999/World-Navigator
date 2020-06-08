@@ -14,7 +14,7 @@ public class MapBuilder {
   public MapBuilder setStartRoom(Room startRoom) {
 
     if (startRoom == null) {
-      throw new IllegalArgumentException("start room value is null!");
+      throw new NullPointerException("start room value is null!");
     }
 
     this.startRoom = startRoom;
@@ -24,7 +24,7 @@ public class MapBuilder {
   public MapBuilder setGoalRoom(Room goalRoom) {
 
     if (goalRoom == null) {
-      throw new IllegalArgumentException("goal room value is null!");
+      throw new NullPointerException("goal room value is null!");
     }
 
     this.goalRoom = goalRoom;
@@ -54,7 +54,7 @@ public class MapBuilder {
   public MapBuilder setPlayerFacingDirection(Direction playerFacingDirection) {
 
     if (playerFacingDirection == null) {
-      throw new IllegalArgumentException("player facing direction value is null!");
+      throw new NullPointerException("player facing direction value is null!");
     }
 
     this.playerFacingDirection = playerFacingDirection;

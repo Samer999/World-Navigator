@@ -20,11 +20,11 @@ public class Map implements Serializable {
       Direction playerFacingDirection) {
 
     if (startRoom == null) {
-      throw new IllegalArgumentException("start room value is null!");
+      throw new NullPointerException("start room value is null!");
     }
 
     if (goalRoom == null) {
-      throw new IllegalArgumentException("goa room value is null!");
+      throw new NullPointerException("goa room value is null!");
     }
 
     if (timeToFinish < 0) {
@@ -36,7 +36,7 @@ public class Map implements Serializable {
     }
 
     if (playerFacingDirection == null) {
-      throw new IllegalArgumentException("player facing direction value is null!");
+      throw new NullPointerException("player facing direction value is null!");
     }
 
     this.startRoom = startRoom;

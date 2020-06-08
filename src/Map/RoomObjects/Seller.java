@@ -24,7 +24,7 @@ public class Seller extends Trader implements RoomObject {
   public void proceedBuying(Item item) {
 
     if (item == null) {
-      throw new IllegalArgumentException("item value is null!");
+      throw new NullPointerException("item value is null!");
     }
 
     takeAwayGold(item.getPrice());
@@ -34,7 +34,7 @@ public class Seller extends Trader implements RoomObject {
   public void proceedSelling(Item item) {
 
     if (item == null) {
-      throw new IllegalArgumentException("item value is null!");
+      throw new NullPointerException("item value is null!");
     }
 
     takeAwayItem(item);

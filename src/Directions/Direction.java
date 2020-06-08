@@ -8,7 +8,7 @@ public enum Direction {
 
   public static Direction oppositeDirection(Direction direction) {
     if (direction == null) {
-      throw new IllegalArgumentException("direction value is null!");
+      throw new NullPointerException("direction value is null!");
     }
 
     switch (direction) {
@@ -25,7 +25,7 @@ public enum Direction {
 
   public static Direction turnRight(Direction direction) {
     if (direction == null) {
-      throw new IllegalArgumentException("direction value is null!");
+      throw new NullPointerException("direction value is null!");
     }
 
     switch (direction) {
@@ -42,7 +42,7 @@ public enum Direction {
 
   public static Direction turnLeft(Direction direction) {
     if (direction == null) {
-      throw new IllegalArgumentException("direction value is null!");
+      throw new NullPointerException("direction value is null!");
     }
 
     switch (direction) {

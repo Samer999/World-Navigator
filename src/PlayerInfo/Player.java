@@ -25,7 +25,7 @@ public class Player extends Trader {
 
   public void setDirection(Direction direction) {
     if (direction == null) {
-      throw new IllegalArgumentException("direction value is null!");
+      throw new NullPointerException("direction value is null!");
     }
 
     facingDirection = direction;
@@ -53,7 +53,7 @@ public class Player extends Trader {
 
   public void setCurrentRoom(Room currentRoom) {
     if (currentRoom == null) {
-      throw new IllegalArgumentException("room value is null!");
+      throw new NullPointerException("room value is null!");
     }
 
     this.currentRoom = currentRoom;

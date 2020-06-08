@@ -9,7 +9,7 @@ public class Key extends Item {
   public Key(int price, String name) {
     super(price);
     if (name == null) {
-      throw new IllegalArgumentException("Key name is null!");
+      throw new NullPointerException("Key name is null!");
     }
 
     this.name = name;

@@ -16,7 +16,7 @@ public class Mirror implements LootHider, Checkable, RoomObject, Serializable {
   public Mirror(Key keyLoot) {
 
     if (keyLoot == null) {
-      throw new IllegalArgumentException("key value is null!");
+      throw new NullPointerException("key value is null!");
     }
 
     this.keyLoot = new OneKeyLoot(keyLoot);

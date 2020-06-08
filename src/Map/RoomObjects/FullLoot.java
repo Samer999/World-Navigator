@@ -30,7 +30,7 @@ public class FullLoot implements Loot, Serializable {
 
   public void addItem(Item item) {
     if (item == null) {
-      throw new IllegalArgumentException("item value is null!");
+      throw new NullPointerException("item value is null!");
     }
 
     lootStatus.addItem(item);
@@ -47,7 +47,7 @@ public class FullLoot implements Loot, Serializable {
   public void lootGold(Player player) {
 
     if (player == null) {
-      throw new IllegalArgumentException("player value is null!");
+      throw new NullPointerException("player value is null!");
     }
 
     player.giveGold(goldLoot);
@@ -58,7 +58,7 @@ public class FullLoot implements Loot, Serializable {
   public void lootItems(Player player) {
 
     if (player == null) {
-      throw new IllegalArgumentException("player value is null!");
+      throw new NullPointerException("player value is null!");
     }
 
     int lastIndexInList = lootStatus.numberOfItems() - 1;

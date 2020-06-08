@@ -10,7 +10,7 @@ public abstract class GameModeCommand implements Command {
   public GameModeCommand(Mode mode) {
 
     if (mode == null) {
-      throw new IllegalArgumentException("game controller value is null!");
+      throw new NullPointerException("game controller value is null!");
     }
 
     this.mode = mode;

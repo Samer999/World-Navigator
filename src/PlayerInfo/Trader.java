@@ -45,11 +45,11 @@ public abstract class Trader implements Serializable {
 
   private boolean canSellItemTo(Trader trader, Item item) {
     if (trader == null) {
-      throw new IllegalArgumentException("trader value is null!");
+      throw new NullPointerException("trader value is null!");
     }
 
     if (item == null) {
-      throw new IllegalArgumentException("item value is null!");
+      throw new NullPointerException("item value is null!");
     }
 
     if (itemStatus.contains(item) == false) {
@@ -66,11 +66,11 @@ public abstract class Trader implements Serializable {
   public final void sellItem(Trader trader, Item item) {
 
     if (trader == null) {
-      throw new IllegalArgumentException("trader value is null!");
+      throw new NullPointerException("trader value is null!");
     }
 
     if (item == null) {
-      throw new IllegalArgumentException("item value is null!");
+      throw new NullPointerException("item value is null!");
     }
 
     if (!canSellItemTo(trader, item)) {
@@ -87,11 +87,11 @@ public abstract class Trader implements Serializable {
       Trader trader, Item item) { // This Template Method calls the other Template Method
 
     if (trader == null) {
-      throw new IllegalArgumentException("trader value is null!");
+      throw new NullPointerException("trader value is null!");
     }
 
     if (item == null) {
-      throw new IllegalArgumentException("item value is null!");
+      throw new NullPointerException("item value is null!");
     }
 
     trader.sellItem(this, item);

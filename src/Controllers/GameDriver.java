@@ -62,7 +62,7 @@ public class GameDriver {
 
   public void addGameMode(Mode mode) {
     if (mode == null) {
-      throw new IllegalArgumentException("game controller value is null!");
+      throw new NullPointerException("game controller value is null!");
     }
 
     modes.add(mode);

@@ -14,7 +14,7 @@ public class ItemStatus implements Serializable {
 
   public void addItem(Item item) {
     if (item == null) {
-      throw new IllegalArgumentException("item value is null");
+      throw new NullPointerException("item value is null");
     }
 
     itemList.add(item);
@@ -22,7 +22,7 @@ public class ItemStatus implements Serializable {
 
   public void removeItem(Item item) {
     if (item == null) {
-      throw new IllegalArgumentException("item value is null");
+      throw new NullPointerException("item value is null");
     }
 
     itemList.remove(item);
@@ -49,7 +49,7 @@ public class ItemStatus implements Serializable {
 
   public boolean contains(Item item) {
     if (item == null) {
-      throw new IllegalArgumentException("item value is null!");
+      throw new NullPointerException("item value is null!");
     }
 
     return itemList.contains(item);

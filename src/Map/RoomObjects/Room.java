@@ -26,7 +26,7 @@ public class Room implements Serializable {
   public Room(Light roomLight) {
     this();
     if (roomLight == null) {
-      throw new IllegalArgumentException("room light switch value is null!");
+      throw new NullPointerException("room light switch value is null!");
     }
 
     this.roomLight = roomLight;
@@ -35,11 +35,11 @@ public class Room implements Serializable {
   public void addRoomObject(Direction direction, RoomObject roomObject) {
 
     if (direction == null) {
-      throw new IllegalArgumentException("direction value is null!");
+      throw new NullPointerException("direction value is null!");
     }
 
     if (roomObject == null) {
-      throw new IllegalArgumentException("room object value is null!");
+      throw new NullPointerException("room object value is null!");
     }
 
     roomObjects.put(direction, roomObject);
@@ -47,7 +47,7 @@ public class Room implements Serializable {
 
   public RoomObject getRoomObject(Direction direction) {
     if (direction == null) {
-      throw new IllegalArgumentException("direction value is null!");
+      throw new NullPointerException("direction value is null!");
     }
 
     return roomObjects.get(direction);

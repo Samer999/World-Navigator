@@ -9,7 +9,7 @@ public abstract class PlayerCommand implements Command {
 
   public PlayerCommand(Player player) {
     if (player == null) {
-      throw new IllegalArgumentException("player value is null!");
+      throw new NullPointerException("player value is null!");
     }
 
     this.player = player;

@@ -12,7 +12,7 @@ public class MapLoader {
 
   public MapLoader(File file) {
     if (file == null) {
-      throw new IllegalArgumentException("file value is null!");
+      throw new NullPointerException("file value is null!");
     }
     this.file = file;
   }

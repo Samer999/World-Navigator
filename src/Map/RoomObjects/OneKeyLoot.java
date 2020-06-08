@@ -14,7 +14,7 @@ public class OneKeyLoot implements Loot, Serializable {
 
   public OneKeyLoot(Key key) {
     if (key == null) {
-      throw new IllegalArgumentException("key value is null!");
+      throw new NullPointerException("key value is null!");
     }
 
     this.key = key;
@@ -23,7 +23,7 @@ public class OneKeyLoot implements Loot, Serializable {
   public void loot(Player player) {
 
     if (player == null) {
-      throw new IllegalArgumentException("player value is null!");
+      throw new NullPointerException("player value is null!");
     }
 
     if (key == null) {
