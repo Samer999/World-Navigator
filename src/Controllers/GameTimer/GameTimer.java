@@ -40,7 +40,7 @@ public class GameTimer extends Thread {
     }
   }
 
-  public int getRemainingSeconds() {
+  public synchronized int getRemainingSeconds() {
     return seconds;
   }
 
