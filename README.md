@@ -37,12 +37,15 @@ which map do you want?
 0 : 3Rooms 1min.ser
 1 : 3Rooms 3min.ser
 2 : 3Rooms 5min.ser
-3 : 5Rooms 3min.ser
-4 : 5Rooms 5min.ser
+3 : 5Rooms 1min.ser
+4 : 5Rooms 3min.ser
+5 : 5Rooms 5min.ser
 Enter map index : 
 ```
 
 These are the maps that are available in your "**resources/maps**" directory , every map has a time-limit to go threw the map and win the game, as you can see here, the map designer chose to put the map time-limit in the name of the map file, some map names could not have this info shown, it all depends on what the map designer wants to show
+
+You can see images of the maps in "**resources/maps/images of the maps**"
 
 (Proxy pattern is used here, to improve the performance of the game, more details in the game report)
 
@@ -60,27 +63,25 @@ In the future implementing a multiplayer version of this game or even some creat
 
 (we will talk about that in the report with details)
 
-
-
 ```text
 Game controller commands : 
-0 : Restart Map
-1 : Quit This Map
-2 : Go Forward
-3 : Go Backward
-4 : Turn Left
-5 : Turn right
-6 : Player status
-7 : Look
-8 : Check
-9 : Open
-10 : Hold light from inventory
-11 : Drop held light back to inventory
-12 : Use Held Light
-13 : Switch Room Light
-14 : Trade
-15 : Use Key
-Enter index : 
+0 : Go Forward
+1 : Go Backward
+2 : Turn Left
+3 : Turn right
+4 : Player status
+5 : Look
+6 : Check
+7 : Open
+8 : Hold light from inventory
+9 : Drop held light back to inventory
+10 : Use Held Light
+11 : Switch Room Light
+12 : Trade
+13 : Use Key
+14 : Restart Map
+15 : Quit This Map
+Enter index :
 ```
 
 for the first game mode, this is the command list that you as a player will work with
